@@ -1,18 +1,6 @@
 const User = require('../models/user');
-const UserLogin = require('../models/userLogin');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-
-exports.getAllUsers = async (req, res) => {
-    try {
-        // Objeto de teste
-        const users = await User.findAll();
-        res.status(200).send(users);
-
-    } catch (error) {
-        res.status(400).send(error);
-    }
-};
 
 exports.createUser = async (req, res) => {
     try {
