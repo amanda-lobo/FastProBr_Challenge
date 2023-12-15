@@ -9,7 +9,12 @@ const userController = require('./controllers/userController')
 
 app.use(express.json());
 app.use(userController);
-app.use(cors());
+
+const corsOptions = {
+  origin: "http://localhost:5173"
+};
+
+app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 3000;
 
